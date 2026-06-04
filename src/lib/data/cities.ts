@@ -49,7 +49,7 @@ export async function getCityBySlug(slug: string) {
   return data
 }
 
-export async function getAllCitySlugs() {
+export async function getAllCitySlugs(): Promise<string[]> {
   const supabase = await createClient()
   
   const { data, error } = await supabase
@@ -62,5 +62,5 @@ export async function getAllCitySlugs() {
     return []
   }
 
-  return data.map(c => c.slug)
+  return (data as { slug: string }[]).map(c => c.slug)
 }
