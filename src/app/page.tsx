@@ -116,43 +116,38 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1605106702734-205df224ecce?w=1920&q=80)',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/95 via-primary to-primary/90 overflow-hidden">
+        {/* Subtle pattern overlay */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         </div>
 
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30 backdrop-blur-sm">
+          <Badge variant="secondary" className="mb-6 bg-white/15 text-white border-white/20">
             The #1 Florida Relocation Resource
           </Badge>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Find Your Perfect Place
-            <span className="block text-florida-gold">in Florida</span>
+            <span className="block text-white/90">in Florida</span>
           </h1>
           
-          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-10">
-            Explore cities, neighborhoods, and schools. Compare costs, discover lifestyle communities, and connect with local experts who know Florida best.
+          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10">
+            Explore cities, neighborhoods, and schools. Compare costs, discover lifestyle communities, and connect with local experts.
           </p>
 
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto mb-8">
-            <div className="flex flex-col sm:flex-row gap-3 bg-white/95 backdrop-blur-sm p-2 rounded-xl shadow-2xl">
+            <div className="flex flex-col sm:flex-row gap-3 bg-white p-2 rounded-xl shadow-lg">
               <div className="flex-1 relative">
                 <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input 
                   placeholder="Search cities, neighborhoods, or zip codes..." 
-                  className="pl-12 h-12 border-0 bg-transparent text-lg focus-visible:ring-0"
+                  className="pl-12 h-12 border-0 bg-transparent text-base focus-visible:ring-0"
                 />
               </div>
-              <Button size="lg" className="h-12 px-8 text-base">
+              <Button size="lg" className="h-12 px-8">
                 Explore
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -160,29 +155,16 @@ export default function HomePage() {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/cities/tampa" className="text-sm text-white/80 hover:text-white transition-colors flex items-center gap-1">
-              <ChevronRight className="h-4 w-4" /> Tampa
-            </Link>
-            <Link href="/cities/sarasota" className="text-sm text-white/80 hover:text-white transition-colors flex items-center gap-1">
-              <ChevronRight className="h-4 w-4" /> Sarasota
-            </Link>
-            <Link href="/cities/naples" className="text-sm text-white/80 hover:text-white transition-colors flex items-center gap-1">
-              <ChevronRight className="h-4 w-4" /> Naples
-            </Link>
-            <Link href="/cities/orlando" className="text-sm text-white/80 hover:text-white transition-colors flex items-center gap-1">
-              <ChevronRight className="h-4 w-4" /> Orlando
-            </Link>
-            <Link href="/lifestyle/retirement" className="text-sm text-white/80 hover:text-white transition-colors flex items-center gap-1">
-              <ChevronRight className="h-4 w-4" /> 55+ Communities
-            </Link>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/50 flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/cities/tampa" className="text-sm text-white/70 hover:text-white transition-colors">Tampa</Link>
+            <span className="text-white/30">|</span>
+            <Link href="/cities/sarasota" className="text-sm text-white/70 hover:text-white transition-colors">Sarasota</Link>
+            <span className="text-white/30">|</span>
+            <Link href="/cities/naples" className="text-sm text-white/70 hover:text-white transition-colors">Naples</Link>
+            <span className="text-white/30">|</span>
+            <Link href="/cities/orlando" className="text-sm text-white/70 hover:text-white transition-colors">Orlando</Link>
+            <span className="text-white/30">|</span>
+            <Link href="/lifestyle/retirement" className="text-sm text-white/70 hover:text-white transition-colors">55+ Communities</Link>
           </div>
         </div>
       </section>
